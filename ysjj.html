@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 关键viewport设置 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>全屏图片</title>
+    <style>
+        /* 重置默认边距 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 全屏容器 */
+        .fullscreen-container {
+            position: relative; /* 改为相对定位 */
+            width: 100%; /* 宽度100% */
+            height: auto; /* 高度自动 */
+            overflow: auto; /* 允许滚动 */
+        }
+
+        /* 自适应图片 */
+        .responsive-img {
+            width: 100%;
+            height: auto; /* 高度自动 */
+            object-fit: cover;  /* 保持比例填充容器 */
+            object-position: center; /* 图片中心对齐 */
+        }
+
+        /* 移动端横屏适配 */
+        @media (orientation: landscape) {
+            .responsive-img {
+                object-fit: contain;  /* 横屏时改为包含模式 */
+                background: #000;    /* 添加背景色 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fullscreen-container">
+        <!-- 替换your-image.jpg为你的图片路径 -->
+        <img src="img/拼接.png" alt="全屏图片" class="responsive-img">
+    </div>
+</body>
+</html>
